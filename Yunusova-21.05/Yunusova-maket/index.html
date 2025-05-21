@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Калькулятор кухни</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Стиль:</h2>
+      <div class="style-options">
+        <div class="style-option">
+          <img src="./img/cовременный_стиль.png" alt="Современный стиль" />
+          <button class="style-button">Современный стиль</button>
+        </div>
+        <div class="style-option">
+          <img src="./img/кухни.png" alt="Кухня Лофт" />
+          <button class="style-button">Кухня Лофт</button>
+        </div>
+        <div class="style-option">
+          <img src="./img/классический_стиль.png" alt="Классический стиль" />
+          <button class="style-button">Классический стиль</button>
+        </div>
+        <div class="style-option">
+          <img src="./img/другое.png" alt="Другое" />
+          <button class="style-button">Другое</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h2>Форма:</h2>
+      <div class="form-options">
+        <div class="form-option">
+          <div class="circle">
+            <img src="./img/прямая.png" alt="" />
+          </div>
+          <p>Прямая кухня</p>
+        </div>
+        <div class="form-option">
+          <div class="circle">
+            <img src="./img/угловая.png" alt="" />
+          </div>
+          <p>Угловая кухня</p>
+        </div>
+        <div class="form-option">
+          <div class="circle">
+            <img src="./img/п-образная.png" alt="" />
+          </div>
+          <p>П-образная кухня</p>
+        </div>
+        <div class="form-option">
+          <div class="circle">
+            <img src="./img/паралельная.png" alt="" />
+          </div>
+          <p>Параллельная кухня</p>
+        </div>
+        <div class="form-option">
+          <div class="circle">
+            <img src="./img/состровом.png" alt="" />
+          </div>
+          <p>Кухня с островом</p>
+        </div>
+        <div class="form-option">
+          <div class="circle">
+            <img src="./img/другие.png" alt="" />
+          </div>
+          <p>Другие формы</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h2>Площадь кухни:</h2>
+      <div class="area-options">
+        <button class="area-button" data-value="До 5 м²">До 5 м²</button>
+        <button class="area-button" data-value="До 8 м²">До 8 м²</button>
+        <button class="area-button" data-value="До 15 м²">До 15 м²</button>
+        <button class="area-button" data-value="Другое">Другое</button>
+      </div>
+    </div>
+    <div class="footer">
+      <p>
+        Оставьте свой номер телефона сейчас и наш 
+        дизайнер свяжется с Вами в
+        ближайшее время!
+      </p>
+      <input type="text" placeholder="Номер телефона" id="phone-number" />
+      <button class="calculate-button">Рассчитать стоимость</button>
+    </div>
+    <script src="script.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

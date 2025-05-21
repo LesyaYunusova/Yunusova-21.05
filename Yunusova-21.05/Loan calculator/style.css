@@ -1,0 +1,142 @@
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #f5f7fa;
+  --accent-color: #ef5350;
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--secondary-color);
+  font-family: var(--font-family);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+.calculator {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(74, 144, 226, 0.2);
+  max-width: 400px;
+  width: 100%;
+  padding: 2rem;
+  display: grid;
+  gap: 1.5rem;
+}
+.calculator h1 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+label {
+  font-weight: 600;
+  color: #333;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+input[type="number"],
+input[type="range"] {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+input[type="number"]:focus,
+input[type="range"]:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 8px;
+  border-radius: 5px;
+  background: #ddd;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  background: var(--primary-color);
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  margin-top: -7px;
+  box-shadow: 0 2px 6px rgba(74, 144, 226, 0.4);
+  transition: background 0.3s ease;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  background: var(--primary-color);
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 2px 6px rgba(74, 144, 226, 0.4);
+  transition: background 0.3s ease;
+}
+.output {
+  background: var(--primary-color);
+  border-radius: 12px;
+  color: white;
+  padding: 1rem 1.5rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-align: center;
+  user-select: none;
+}
+.output span {
+  display: block;
+  font-size: 2rem;
+  margin-top: 0.3rem;
+}
+.slider-container {
+  position: relative;
+}
+.slider-value {
+  position: absolute;
+  right: 0;
+  top: -1.8rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 1rem;
+  user-select: none;
+}
+button {
+  background: var(--primary-color);
+  border: none;
+  color: white;
+  font-weight: 700;
+  padding: 0.7rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.3s ease;
+}
+button:hover {
+  background: #357abd;
+}
+.error {
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+@media (max-width: 480px) {
+  .calculator {
+    padding: 1.5rem;
+  }
+  .output span {
+    font-size: 1.6rem;
+  }
+}

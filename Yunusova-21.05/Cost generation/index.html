@@ -1,0 +1,152 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Advanced Cost Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="calculator" aria-label="Cost Calculator">
+      <h1>Advanced Cost Calculator</h1>
+
+      <form id="costForm" novalidate>
+        <div class="form-group">
+          <label for="basePrice">Base Price ($)</label>
+          <input
+            type="number"
+            id="basePrice"
+            name="basePrice"
+            min="0"
+            step="0.01"
+            value="1000"
+            required
+            aria-describedby="basePriceHelp"
+          />
+          <small id="basePriceHelp"
+            >Enter the initial base price of the item or service.</small
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="quantity">Quantity</label>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            min="1"
+            step="1"
+            value="1"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="taxRate">Tax Rate (%)</label>
+          <input
+            type="range"
+            id="taxRate"
+            name="taxRate"
+            min="0"
+            max="25"
+            step="0.1"
+            value="8"
+            aria-valuemin="0"
+            aria-valuemax="25"
+            aria-valuenow="8"
+          />
+          <output id="taxRateValue" for="taxRate" aria-live="polite">8%</output>
+        </div>
+
+        <div class="form-group">
+          <label for="discountType">Discount</label>
+          <div class="inline-group">
+            <select
+              id="discountType"
+              name="discountType"
+              aria-label="Discount type"
+            >
+              <option value="none" selected>No Discount</option>
+              <option value="fixed">Fixed Amount ($)</option>
+              <option value="percent">Percentage (%)</option>
+            </select>
+            <input
+              type="number"
+              id="discountValue"
+              name="discountValue"
+              min="0"
+              step="0.01"
+              value="0"
+              disabled
+              aria-label="Discount value"
+            />
+          </div>
+        </div>
+
+        <fieldset
+          class="form-group"
+          aria-describedby="extrasHelp"
+          style="border: none; padding: 0"
+        >
+          <legend>Optional Extras</legend>
+          <small id="extrasHelp"
+            >Select optional add-ons that add to the total cost.</small
+          >
+          <div class="checkbox-group">
+            <input
+              type="checkbox"
+              id="premiumSupport"
+              name="extras"
+              value="premiumSupport"
+              data-cost="150"
+            />
+            <label for="premiumSupport">Premium Support ($150)</label>
+          </div>
+          <div class="checkbox-group">
+            <input
+              type="checkbox"
+              id="extendedWarranty"
+              name="extras"
+              value="extendedWarranty"
+              data-cost="200"
+            />
+            <label for="extendedWarranty">Extended Warranty ($200)</label>
+          </div>
+          <div class="checkbox-group">
+            <input
+              type="checkbox"
+              id="giftWrap"
+              name="extras"
+              value="giftWrap"
+              data-cost="25"
+            />
+            <label for="giftWrap">Gift Wrap ($25)</label>
+          </div>
+        </fieldset>
+
+        <button type="submit" aria-label="Calculate total cost">
+          Calculate
+        </button>
+      </form>
+
+      <output
+        id="result"
+        class="output"
+        aria-live="polite"
+        role="region"
+        tabindex="0"
+      ></output>
+      <pre
+        id="breakdown"
+        class="detailed-breakdown"
+        aria-live="polite"
+        role="region"
+        tabindex="0"
+      ></pre>
+    </section>
+    </script>
+    <script src="main.js"></script>
+
+  </body>
+</html>
